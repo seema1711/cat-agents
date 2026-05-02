@@ -1,0 +1,72 @@
+{
+  "name": "cat-agents",
+  "displayName": "Cat Agents",
+  "description": "Pixel art cat office where your Claude Code agents come to life as animated cats",
+  "version": "1.0.0",
+  "publisher": "seema1711",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seema1711/cat-agents"
+  },
+  "engines": {
+    "vscode": "^1.105.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "icon": "assets/icon.png",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "cat-agents",
+          "title": "Cat Agents",
+          "icon": "assets/cat-icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "cat-agents": [
+        {
+          "type": "webview",
+          "id": "cat-agents.panel",
+          "name": "Cat Office"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "cat-agents.showPanel",
+        "title": "Show Cat Office Panel",
+        "category": "Cat Agents"
+      },
+      {
+        "command": "cat-agents.exportDefaultLayout",
+        "title": "Export Default Layout",
+        "category": "Cat Agents"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc --noEmit",
+    "build": "npm run compile && node esbuild.mjs && npm run build:webview",
+    "build:webview": "cd webview-ui && npm run build",
+    "watch": "concurrently \"node esbuild.mjs --watch\" \"cd webview-ui && npm run dev\"",
+    "package": "npm run build && vsce package",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\""
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.105.0",
+    "concurrently": "^8.0.0",
+    "esbuild": "^0.25.0",
+    "prettier": "^3.0.0",
+    "typescript": "~5.9.3"
+  }
+}

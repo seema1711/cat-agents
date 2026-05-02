@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="none">
+  <!-- ears -->
+  <polygon points="2,6 4,2 6,6" fill="#888"/>
+  <polygon points="10,6 12,2 14,6" fill="#888"/>
+  <!-- head -->
+  <rect x="2" y="5" width="12" height="9" rx="3" fill="#888"/>
+  <!-- eyes -->
+  <ellipse cx="5.5" cy="8" rx="1" ry="1.2" fill="#222"/>
+  <ellipse cx="10.5" cy="8" rx="1" ry="1.2" fill="#222"/>
+  <!-- nose -->
+  <polygon points="7.5,10 8.5,10 8,11" fill="#e88"/>
+  <!-- whiskers -->
+  <line x1="2" y1="10" x2="6" y2="10.5" stroke="#555" stroke-width="0.5"/>
+  <line x1="10" y1="10.5" x2="14" y2="10" stroke="#555" stroke-width="0.5"/>
+</svg>

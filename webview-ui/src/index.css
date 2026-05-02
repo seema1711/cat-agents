@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #1a1a2e;
+  color: #e0e0e0;
+  font-family: var(--vscode-font-family, 'Segoe UI', system-ui, sans-serif);
+  font-size: 12px;
+}
+
+canvas {
+  display: block;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.cat-panel {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.cat-canvas-wrapper {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  cursor: default;
+}
+
+.cat-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  background: #16213e;
+  border-top: 1px solid #0f3460;
+  flex-shrink: 0;
+}
+
+.cat-toolbar button {
+  background: #0f3460;
+  color: #e0e0e0;
+  border: none;
+  border-radius: 4px;
+  padding: 3px 8px;
+  cursor: pointer;
+  font-size: 11px;
+  transition: background 0.15s;
+}
+
+.cat-toolbar button:hover {
+  background: #16213e;
+  border: 1px solid #e94560;
+}
+
+.cat-toolbar .label {
+  font-size: 10px;
+  color: #888;
+  margin-left: auto;
+}
+
+.cat-overlay {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  pointer-events: none;
+}
+
+.cat-agent-chip {
+  background: rgba(15, 52, 96, 0.85);
+  border: 1px solid #0f3460;
+  border-radius: 4px;
+  padding: 3px 6px;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  pointer-events: all;
+  cursor: pointer;
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cat-agent-chip:hover {
+  border-color: #e94560;
+}
+
+.cat-agent-chip .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.dot-active { background: #00ff88; }
+.dot-waiting { background: #ffaa00; }
+.dot-idle { background: #555; }
+
+.zoom-controls {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.zoom-controls button {
+  width: 22px;
+  height: 22px;
+  background: rgba(15, 52, 96, 0.85);
+  border: 1px solid #0f3460;
+  color: #e0e0e0;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.zoom-controls button:hover {
+  border-color: #e94560;
+}

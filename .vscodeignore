@@ -1,0 +1,9 @@
+**/.git/**
+node_modules/**
+webview-ui/node_modules/**
+webview-ui/src/**
+src/**
+*.map
+.eslintrc*
+tsconfig*.json
+esbuild.mjs
